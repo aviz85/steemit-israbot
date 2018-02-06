@@ -6,7 +6,9 @@ var names = communityRaw.split(', ');
 
 const botName = 'israbot';
 
-const wif = ''; // get from system params
+console.log(botName+' is on!');
+
+const postKey = ''; // get from system params
 
 const interval = 1000;
 
