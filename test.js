@@ -41,16 +41,16 @@ var crawl = function(blockNum) {
                     if (o[0] == 'comment')
                         if (o[1].parent_author == '') { // Post!
                         	var p = o[1];
-				if (names.indexOf(p.author) > -1) // New post has been created by someone from the community
-				var po = {
-					timestamp: b.timestamp,
-					author: p.author,
-					permlink: p.permlink,	
-				};
-				bot.votingQueue.push(po);
-				console.log(po);
-
-                        }
+				if (names.indexOf(p.author) > -1){ // New post has been created by someone from the community
+					var po = {
+						timestamp: b.timestamp,
+						author: p.author,
+						permlink: p.permlink,	
+					};
+					bot.votingQueue.push(po);
+					console.log(po);
+				}
+			}
                 }
             }
         }
