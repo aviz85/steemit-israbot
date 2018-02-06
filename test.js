@@ -2,7 +2,7 @@ var steem = require('steem');
 
 var communityRaw = 'norod, imacryptorick, yoram, summitbreeze, backlight, dimshik, bitton, yehonatan, paps, efratbit, gnovik, igal, arnavlavan, joinnessi, aviz85, yayab, ronystb, simba, bit-news, fax4u, doriitamar, ruven94, shlomit, talhoresh, yaniv, brigitte0659, taltalim102, shulamit74, didic, troglodyte, inbarbd, poet, geekorner, kobicohen, freakyfrog, kingdavidharp, lonelywolf, mrlightning, gangstayid, yardenyo, omermushkatel, noogler, assaf, atukh09, pipomim, onnkidu, megadoom, nirgf, sagivmbs, amiramnoam, anna-holy-city, elifeldman, delechex, amichai1234, windforce, steempty, yaelmarganit, nv21089, itzhakb, dany685, roeeyb, byzul234, miriam-db, aokrat, roeysimantovhe, amit337, danielaver, gadol, telaviv, henyamania, orenshani7, techslut, yairdd, cryptosludge, michalbaram, asafb2k, fun-facts, idoitbigtime, sunrock';
 
-var names = communityRaw.split(',');
+var names = communityRaw.split(', ');
 
 const botName = 'israbot';
 
