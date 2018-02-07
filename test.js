@@ -1,14 +1,15 @@
 var steem = require('steem');
 
-var communityRaw = 'norod, imacryptorick, yoram, summitbreeze, backlight, dimshik, bitton, yehonatan, paps, efratbit, gnovik, igal, arnavlavan, joinnessi, aviz85, yayab, ronystb, simba, bit-news, fax4u, doriitamar, ruven94, shlomit, talhoresh, yaniv, brigitte0659, taltalim102, shulamit74, didic, troglodyte, inbarbd, poet, geekorner, kobicohen, freakyfrog, kingdavidharp, lonelywolf, mrlightning, gangstayid, yardenyo, omermushkatel, noogler, assaf, atukh09, pipomim, onnkidu, megadoom, nirgf, sagivmbs, amiramnoam, anna-holy-city, elifeldman, delechex, amichai1234, windforce, steempty, yaelmarganit, nv21089, itzhakb, dany685, roeeyb, byzul234, miriam-db, aokrat, roeysimantovhe, amit337, danielaver, gadol, telaviv, henyamania, orenshani7, techslut, yairdd, cryptosludge, michalbaram, asafb2k, fun-facts, idoitbigtime, sunrock';
+var communityRaw = 'norod, imacryptorick, yoram, summitbreeze, backlight, dimshik, bitton, yehonatan, paps, efratbit, gnovik, igal, arnavlavan, joinnessi, aviz85, yayab, ronystb, simba, bit-news, fax4u, doriitamar, ruven94, shlomit, talhoresh, yaniv, brigitte0659, taltalim102, shulamit74, didic, troglodyte, inbarbd, poet, geekorner, kobicohen, freakyfrog, kingdavidharp, lonelywolf, mrlightning, gangstayid, yardenyo, omermushkatel, noogler, assaf, atukh09, pipomim, onnkidu, megadoom, nirgf, sagivmbs, amiramnoam, anna-holy-city, elifeldman, delechex, amichai1234, windforce, steempty, yaelmarganit, nv21089, itzhakb, dany685, roeeyb, byzul234, miriam-db, aokrat, roeysimantovhe, amit337, danielaver, gadol, telaviv, henyamania, orenshani7, techslut, yairdd, cryptosludge, michalbaram, asafb2k, fun-facts, idoitbigtime, sunrock, orine';
 
 var names = communityRaw.split(', ');
 
-const botName = 'israbot';
+const botName = process.argv[2];
 
+console.log('\x1Bc'); //hide the wif
 console.log(botName+' is on!');
 
-const postKey = ''; // get from system params
+const wif = process.argv[3]; // posting key
 
 const interval = 1000;
 
@@ -51,6 +52,13 @@ var crawl = function(blockNum) {
 					};
 					bot.votingQueue.push(po);
 					console.log(po);
+
+					
+setTimeout(function(){
+	steem.broadcast.vote(wif, botName, po.author, po.permlink, 10000, function(err, result) {
+						console.log(err, result);
+					});
+},2*60*1000);
 				}
 			}
                 }
